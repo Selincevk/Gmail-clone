@@ -1,0 +1,45 @@
+@import "./variables";
+@import "./header";
+@import "./module";
+@import "./nav";
+@import "./mixin";
+@import "./main";
+@import "./modal";
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+//  font-family: "Roboto", sans-serif;
+
+// ! CSS RESET
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: $nav-background;
+}
+section{
+    display: flex;
+    gap: 20px;
+}
+
+.hide{
+    .create span, .nav-middle span, .nav-bottom span {
+        display: none;
+    }
+   
+}

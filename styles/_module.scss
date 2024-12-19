@@ -1,0 +1,22 @@
+@import "./variables";
+
+
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    box-sizing: content-box;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.5s;
+    &:hover {
+      background-color: $hover-effect;
+    }
+  }

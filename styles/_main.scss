@@ -1,0 +1,147 @@
+@import "./variables";
+@import "./module";
+@import "./mixin";
+
+// Main Area
+main {
+  background-color: $mails-background;
+  border-radius: 8px;
+  flex-grow: 1;
+  @include laptop {
+    padding: 0 5px 0 0;
+  }
+  // ! top
+  .top {
+    @extend .flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    .left {
+      display: flex;
+      gap: 8px;
+      .checkbox {
+        display: flex;
+        gap: 5px;
+        padding-left: 20px;
+        margin-right: 20px;
+      }
+      i {
+        @extend .icon;
+      }
+    }
+    .right {
+      @extend .flex;
+      gap: 8px;
+      margin-right: 10px;
+      i {
+        @extend .icon;
+      }
+
+      .keyboard {
+        display: flex;
+        margin-left: 20px;
+      }
+
+      .passive {
+        color: rgb(174, 174, 174);
+      }
+    }
+  }
+  // ! mails-area
+  .mails-area {
+    height: 80vh;
+    .mail {
+      height: 41px;
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+      gap: 10px;
+      font-size: 16px;
+      background-color: $box-color;
+      padding: 10px;
+      border-bottom: 1px solid rgb(218, 218, 218);
+      transition: all 0.2s;
+      &:hover {
+        box-shadow: 0 0 10px rgb(211, 211, 211);
+      }
+
+      .left {
+        @extend .flex;
+        justify-content: start;
+        gap: 5px;
+        i {
+          @extend .icon;
+          width: 20px;
+          height: 20px;
+        }
+        span {
+          white-space: nowrap;
+        }
+      }
+
+      .right {
+        @extend .flex;
+        justify-content: space-between;
+        font-size: 17px;
+        .messagge-title {
+          font-weight: bold;
+          white-space: nowrap;
+        }
+        .messagge-description {
+          margin-left: 14px;
+          width: 100%;
+          white-space: nowrap;
+        }
+        .messagge-date {
+          white-space: nowrap;
+          font-size: 15px;
+        }
+        .delete {
+          font-size: 17px;
+          cursor: pointer;
+          width: 100px;
+          display: none;
+          position: relative;
+          i {
+            font-size: 18px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+      &:hover .right .messagge-date {
+        display: none;
+      }
+      &:hover .right .delete {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// Right Area
+
+#asideNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 5px;
+  img {
+    width: 28px;
+    height: 28px;
+  }
+  span {
+    background-color: gray;
+    width: 25px;
+    height: 2px;
+  }
+
+  @include laptop {
+    display: none !important;
+  }
+}
+
